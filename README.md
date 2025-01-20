@@ -1,4 +1,4 @@
-# Basic Rust WebServer
+# Basic Rust Web server
 
 A simple web server implementation in Rust, created as a learning project to understand web server fundamentals and Rust programming concepts.
 
