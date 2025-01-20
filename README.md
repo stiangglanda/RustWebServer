@@ -1,4 +1,5 @@
 # Basic Rust Web server
+![Build Status](https://github.com/stiangglanda/RustWebServer/actions/workflows/rust.yml/badge.svg)
 
 A simple web server implementation in Rust, created as a learning project to understand web server fundamentals and Rust programming concepts.
 
