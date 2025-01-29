@@ -2,13 +2,14 @@ use std::{fs, io::{prelude::*, BufReader}, net::{TcpListener, TcpStream}, thread
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-
     println!("ip: 127.0.0.1:7878");
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        handle_connection(stream);
+        thread::spawn(||{
+            handle_connection(stream);
+        });
     }
 }
 
