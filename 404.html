@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>404</h1>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <div class="text-center px-4">
+        <h1 class="text-9xl font-bold text-gray-800 animate__animated animate__bounce">404</h1>
+        <div class="animate__animated animate__fadeIn animate__delay-1s">
+            <h2 class="text-4xl font-semibold text-gray-600 my-6">Page Not Found</h2>
+            <p class="text-gray-500 text-xl mb-8">The page you're looking for doesn't exist or has been moved.</p>
+            <div class="space-y-4">
+                <a href="/" class="inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-200">
+                    Go Home
+                </a>
+                <div class="text-sm text-gray-400 mt-4">
+                    Lost? Try searching or contact support
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        // Add some subtle animation
+        gsap.from('.text-9xl', {
+            duration: 1,
+            y: -100,
+            opacity: 0,
+            ease: 'bounce.out',
+            delay: 0.5
+        });
+    </script>
 </body>
 </html>

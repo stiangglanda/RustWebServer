@@ -2,9 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Test Server</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>hello</h1>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-xl font-bold text-gray-800">Test Server</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="./404.html" class="text-gray-600 hover:text-gray-900">404</a>
+                    <a href="./about.html" class="text-gray-600 hover:text-gray-900">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="py-20 bg-gradient-to-r from-blue-500 to-indigo-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate__animated animate__fadeIn">
+                Welcome to Your Test Server
+            </h1>
+            <p class="text-xl text-white mb-8 animate__animated animate__fadeIn animate__delay-1s">
+                If you're seeing this page, your Rust web server is running successfully!
+            </p>
+            <button class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 animate__animated animate__fadeIn animate__delay-2s">
+                Get Started
+            </button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Test Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold mb-4">Static Files</h3>
+                    <p class="text-gray-600">Test your server's ability to serve static content efficiently.</p>
+                </div>
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold mb-4">Routing</h3>
+                    <p class="text-gray-600">Verify your routing system with different endpoints.</p>
+                </div>
+                <div class="p-6 border rounded-lg hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold mb-4">Response Handling</h3>
+                    <p class="text-gray-600">Test various HTTP response codes and headers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">About This Page</h2>
+            <p class="text-gray-600 mb-6">
+                This is a test landing page designed to help you verify your Rust web server's functionality.
+                It includes common elements like navigation, sections, and interactive components.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Test Contact Form</h2>
+            <form class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <input type="text" placeholder="Name" class="w-full p-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <textarea placeholder="Message" class="w-full p-3 border rounded-lg h-32"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>© 2025 Test Server. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for features on scroll
+        window.addEventListener('scroll', () => {
+            const features = document.querySelectorAll('#features .border');
+            features.forEach(feature => {
+                const rect = feature.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    feature.style.transform = 'translateY(0)';
+                    feature.style.opacity = '1';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

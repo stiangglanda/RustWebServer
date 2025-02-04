@@ -2,7 +2,7 @@ use std::{fs, io::{prelude::*, BufReader}, net::{TcpListener, TcpStream}, thread
 use RustWebServer::ThreadPool;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
     println!("ip: 127.0.0.1:7878");
     let pool = ThreadPool::new(4);
 
@@ -28,6 +28,7 @@ fn handle_connection(mut stream: TcpStream) {
     //let http_request: Vec<_>=buf_reader.lines().map(|result| result.unwrap()).take_while(|line|!line.is_empty()).collect();
     let (status_line,filename)=match &request_line[..] {
         "GET / HTTP/1.1" => ("HTTP/1.1 200 OK", "hello.html"),
+        "GET /about.html HTTP/1.1" => ("HTTP/1.1 200 OK", "about.html"),
         "GET /sleep HTTP/1.1" => {
             thread::sleep(Duration::from_secs(5));
             ("HTTP/1.1 200 OK", "hello.html")
