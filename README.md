@@ -31,8 +31,8 @@ This project implements a basic HTTP web server from scratch using Rust. It hand
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/rust-webserver.git
-cd rust-webserver
+git clone https://github.com/stiangglanda/RustWebServer.git
+cd RustWebServer
 ```
 
 2. Build the project:
@@ -47,23 +47,11 @@ cargo build
 cargo run
 ```
 
-By default, the server will start on `localhost:8080`
+By default, the server will start on `localhost:7878`
 
 2. Access the server:
-- Open your web browser and navigate to `http://localhost:8080`
-- Or use cURL: `curl http://localhost:8080`
-
-## Project Structure
-
-```
-src/
-├── main.rs          # Entry point and server initialization
-├── server.rs        # Server implementation
-├── http/
-│   ├── request.rs   # HTTP request parsing
-│   └── response.rs  # HTTP response generation
-└── router.rs        # Request routing logic
-```
+- Open your web browser and navigate to `http://localhost:7878`
+- Or use cURL: `curl http://localhost:7878`
 
 ## Learning Objectives
 
@@ -77,11 +65,8 @@ src/
 ## Future Improvements
 
 - [ ] Multi-threading support
-- [ ] Configuration file support
-- [ ] HTTP POST request handling
 - [ ] Dynamic route handling
 - [ ] Response compression
-- [ ] HTTPS support
 - [ ] WebSocket support
 
 ## Contributing
